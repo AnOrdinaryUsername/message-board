@@ -11,8 +11,8 @@ client.connect();
 
 function getMessages(request, response) {
   client.query("SELECT * FROM messages;", (error, results) => {
-    if (err) {
-      throw err;
+    if (error) {
+      throw error;
     }
 
     response.status(200).json(results.rows);
